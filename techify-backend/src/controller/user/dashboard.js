@@ -29,6 +29,7 @@ const userDashboard = async (req, res, next) => {
         return res.send({
             data: {
                 userDashboardData,
+                role: req.user.role,
             }
         });
 
@@ -67,12 +68,12 @@ const getUserDashboardData = async (user) => {
 
     } else {
 
-        userData = {
+        userData = [{
             _id,
             email,
             role,
             createdOn,
-        };
+        }];
 
     }
 

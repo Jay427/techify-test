@@ -4,11 +4,11 @@ import {
     CURRENT_PAGE_DATA,
 } from './types';
 
-export const login = (data) => async (dispatch) => {
+export const login = (payload) => async (dispatch) => {
 
     try {
 
-        const res = await axios.post('/api/v1/user/login', data);
+        const res = await axios.post('/api/v1/user/login', payload);
 
         const token = res.data.data.token;
 
@@ -65,11 +65,11 @@ export const dashboardDetails = () => async (dispatch) => {
 
 };
 
-export const register = () => async (dispatch) => {
+export const register = (payload) => async (dispatch) => {
 
     try {
 
-        const res = await axios.get('/api/v1/user/register');
+        const res = await axios.post('/api/v1/user/register', payload);
 
         return res.data.data;
 
