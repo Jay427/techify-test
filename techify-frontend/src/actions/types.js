@@ -1,0 +1,1 @@
+export const CURRENT_PAGE_DATA = 'CURRENT_PAGE_DATA';
